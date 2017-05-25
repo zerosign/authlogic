@@ -33,7 +33,7 @@ module Authlogic
           end
 
           unless klass.class_variable_defined?('@@last_activity_callback')
-            klass.class_variable_set('@@last_activity_callback', nil)
+            klass.class_variable_set('@@last_activity_callback', lambda do |x| end)
           end
         end
 
